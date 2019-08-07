@@ -63,3 +63,7 @@ Web Worker initializes an instance of [`CounterTask`](src/cpp/module.cpp) class 
 It's important to synchronize [`WorkerMessageType`](src/cpp/worker.h) in C++ and [`WorkerMessageType`](src/ts/worker-message.ts) in TypeScript. So, that [`Task`](src/cpp/task.h) class can send correct message type.
 
 Also, if you change the exposed members of C++ classes, you need to change [src/ts/types/module.d.ts](src/ts/types/module.d.ts) to reflect changes for TypeScript.
+
+## Testing
+
+You can test it at: https://flamboyant-tesla-26f5ed.netlify.com/
