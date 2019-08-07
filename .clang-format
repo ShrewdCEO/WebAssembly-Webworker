@@ -1,0 +1,4 @@
+---
+BasedOnStyle: WebKit
+Standard: Cpp11
+FixNamespaceComments: true

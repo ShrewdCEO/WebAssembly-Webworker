@@ -1,0 +1,29 @@
+{
+  "name": "webassembly-webworker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "node build.js --clean",
+    "build": "node build.js --build",
+    "publish": "node build.js --build --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShrewdCEO/WebAssembly-Webworker.git"
+  },
+  "author": "Osman Turan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShrewdCEO/WebAssembly-Webworker/issues"
+  },
+  "homepage": "https://github.com/ShrewdCEO/WebAssembly-Webworker#readme",
+  "devDependencies": {
+    "fs-extra": "^8.1.0",
+    "minimist": "^1.2.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
