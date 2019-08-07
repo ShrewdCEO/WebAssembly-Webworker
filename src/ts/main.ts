@@ -8,7 +8,9 @@ function workerMessageHandler(ev: MessageEvent) {
 
   switch (msg.type) {
     case WorkerMessageType.NotifyState:
-      document.getElementById("state-text")!.innerText = msg.data;
+      document.getElementById("state-text")!.innerText = `State: ${
+        msg.data.state
+      }, Cancellation Count: ${msg.data.cancellationCount}`;
       break;
   }
 }

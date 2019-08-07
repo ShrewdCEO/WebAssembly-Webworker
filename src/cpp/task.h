@@ -9,6 +9,7 @@ public:
     Task()
         : _isRunning(false)
         , _isCanceled(false)
+        , _cancellationCount(0)
     {
     }
 
@@ -31,15 +32,24 @@ public:
         EM_ASM({
             postMessage({
                 type : $0,
-                data : $1
+                data : {
+                    state : $1,
+                    cancellationCount : $2
+                }
             });
         },
-            WorkerMessageType::NotifyState, state);
+            WorkerMessageType::NotifyState, state, _cancellationCount);
     }
 
     void Cancel()
     {
+        if (!_isRunning) {
+            return;
+        }
+
         _isCanceled = true;
+        ++_cancellationCount;
+        NotifyState();
     }
 
     bool IsRunning() const
@@ -52,10 +62,16 @@ public:
         return _isCanceled;
     }
 
+    int CancellationCount() const
+    {
+        return _cancellationCount;
+    }
+
 protected:
     virtual void InternalRun() = 0;
 
 private:
     bool _isRunning;
     bool _isCanceled;
+    int _cancellationCount;
 };
