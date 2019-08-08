@@ -12,7 +12,7 @@
 After cloning the repository, install NPM packages by following command:
 
 ```
-$ npm run install
+$ npm install
 ```
 
 To build project for development, run following command:
